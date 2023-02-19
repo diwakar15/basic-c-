@@ -1,0 +1,329 @@
+//whileloop
+using System;
+
+public class whileloop
+{
+    static void Main(string[] args)
+    {
+        int num1, sum = 0, OriginalNum;
+        Console.WriteLine("enter the value :");
+            OriginalNum = num1 = Convert.ToInt32(Console.ReadLine());
+            while (num1!=0)
+        {
+            int id = num1 % 10;
+            sum+= id;
+            num1 = num1 / 10;
+        }
+        Console.WriteLine("sum of given num{0} digits is{1}",OriginalNum, num1);
+        
+    
+    }
+}
+   
+
+
+//forloop
+using System;
+
+public class forloop
+{
+    static void Main(string[] args)
+    {
+        int num1;
+        Console.WriteLine("enter the value :");
+            num1 = Convert.ToInt32(Console.ReadLine());
+        for(int i=1; i<=10; i++)
+        {
+            Console.WriteLine("{0}x{1}={2}",num1,i,num1*i);
+        }
+    
+    }
+}
+ 
+
+
+//foreach loop
+using System;
+
+public class foreach loop
+{
+    static void Main(string[] args)
+    {
+        int[] numArray = new int[] { 1, 2, 3, 4, 5, };
+        foreach (int item in numArray)
+        {
+            Console.WriteLine("read item{0}", item);
+        }
+    }
+}
+   
+
+//dowhile loop
+using System;
+
+public class dowhileloop
+{
+    static void Main(string[] args)
+    {
+        string choice;
+        do
+        {
+            Console.WriteLine("welcome to boxing academy");
+            Console.Write("are you willing to join [yes/no]=");
+            choice = Console.ReadLine();
+        }while(choice=="yes");
+
+        Console.WriteLine("exit");
+    }
+}
+  
+  
+  //continue
+using System;
+
+public class conti
+{
+    static void Main(string[] args)
+    {
+        for(int i=1;i<=10;i++)
+        {
+            if(i<5)
+            {
+                continue;
+            }
+            Console.WriteLine(i);
+
+        }
+    }
+}
+
+
+
+
+//goto
+using System;
+
+public class loop
+{
+     static void Main(string[] args)
+    {
+        for(int i=1;i<=10;i++)
+        {
+            if(i==8)
+
+                goto exitlabel;
+
+            Console.WriteLine(i);
+        }
+        Console.WriteLine("before");
+
+    exitlabel:
+        Console.WriteLine("after");
+
+    }
+}
+    
+
+//return
+using System;
+
+public class loop
+{
+     static void Main(string[] args)
+    {
+        int result = Add(5, 6);
+        Console.WriteLine(result);
+    }
+    
+    static int Add(int a, int b)
+    {
+        return a + b;
+    }
+}
+   
+
+//throw
+using System;
+
+public class loop
+{
+    static void Main(string[] args)
+    {
+        try
+        {
+            int num1 = 6, num2 = 0,result=0;
+            if(num2 == 0)
+           
+             throw new DivideByZeroException();
+
+            
+
+
+            
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+    }
+
+}
+
+//1 dim array
+using System;
+
+public class loop
+{
+    static void Main(string[] args)
+    {
+        int[] mark = new int[6] { 1, 2, 3,4,5,6 };
+        Console.WriteLine("enter the mark");
+            for(int i=0; i<mark.Length;i++)
+        {
+            Console.WriteLine("\t" +mark[i]);
+            Console.ReadKey();
+
+        }
+        
+    }
+
+}
+
+//1 dim array
+using System;
+
+public class loop
+{
+    static void Main(string[] args)
+    {
+        int[,] mark = new int[2, 3] { { 1, 2, 3, }, { 1, 2, 3 } };
+    Console.WriteLine("enter the mark");
+     
+           for(int i=0; i<mark.GetLength(0);i++)
+        {
+            Console.WriteLine("\n Row #{0) element:",(i+1));
+            for(int j=0; j<mark.GetLength(1);j++)
+            {
+                Console.WriteLine("{0}", mark[i,j]);
+            }
+            Console.ReadKey();
+
+        }
+        
+    }
+
+}
+
+
+// string
+using System;
+
+public class loop
+{
+    static void Main(string[] args)
+    {
+        string name = "hi iam diwakar";
+        string[] strarray= name.Split(' ');
+
+            for(int i=0; i<strarray.Length; i++)
+        {
+            Console.WriteLine("{0}",strarray[i]);
+        }
+        
+    }
+
+}
+
+
+//string
+using System;
+
+public class loop
+{
+    static void Main(string[] args)
+    {
+
+        string name = "diwakar is ";
+        name.Replace("is","im not diwakar");
+        Console.WriteLine("immutable"+ name);
+
+        StringBuilder nameBuilder =new StringBuilder("diwakar is");
+        nameBuilder.Replace("is", "im not diwa");
+        Console.WriteLine("mutable"+ nameBuilder);
+
+    }
+
+
+
+
+//oops access
+using System;
+
+
+
+namespace access
+{
+    public class Assembly1BaseClass
+    {
+        private string privvariable = "private";
+        protected string procvariable = "protected";
+        internal string intrvariable = "internal";
+        protected internal string prointvariable = "proc internal";
+        public string publicvariable = "public";
+
+        public void TestAccess()
+        {
+            Console.WriteLine(privvariable);
+
+            Console.WriteLine(procvariable);
+
+            Console.WriteLine(intrvariable);
+
+            Console.WriteLine(prointvariable);
+
+            Console.WriteLine(publicvariable);
+        }
+    }
+    public class Assembly1derivedclass:Assembly1BaseClass 
+    {
+        public void TestAccessderived()
+        {
+
+            Console.WriteLine(procvariable);
+
+            Console.WriteLine(intrvariable);
+
+            Console.WriteLine(prointvariable);
+
+            Console.WriteLine(publicvariable);
+
+        }
+    }
+
+    public class Assembly1otherclass:Assembly1BaseClass
+    {
+        public void TestAccessother()
+        {
+            Console.WriteLine(intrvariable);
+
+            Console.WriteLine(prointvariable);
+
+            Console.WriteLine(publicvariable);
+        }
+    }
+    class program
+    {
+        static void Main(string[] args)
+        {
+            Assembly1BaseClass obj=new Assembly1BaseClass();
+            obj.TestAccess();
+
+            Assembly1derivedclass obj2 = new Assembly1derivedclass();
+            obj2.TestAccessderived();
+
+            Assembly1otherclass obj3 = new Assembly1otherclass();
+            obj3.TestAccessother();
+        }
+    }
+}
